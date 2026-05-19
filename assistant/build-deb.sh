@@ -17,6 +17,7 @@ install -m 755 server.py package/opt/rb-assistant/server.py
 install -m 755 indexer.py package/opt/rb-assistant/indexer.py
 install -m 755 cli.py package/opt/rb-assistant/cli.py
 install -m 755 embeddings.py package/opt/rb-assistant/embeddings.py
+install -m 644 __init__.py package/opt/rb-assistant/__init__.py
 install -m 644 README.md package/opt/rb-assistant/README.md
 install -m 644 requirements.txt package/opt/rb-assistant/requirements.txt
 install -m 755 setup_env.sh package/opt/rb-assistant/setup_env.sh

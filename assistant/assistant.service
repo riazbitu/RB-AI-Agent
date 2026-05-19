@@ -5,7 +5,9 @@ After=network.target
 [Service]
 Type=simple
 User=rbassistant
-ExecStart=/usr/bin/python3 /opt/rb-assistant/server.py --port 9001
+WorkingDirectory=/opt/rb-assistant
+Environment=PYTHONPATH=/opt/rb-assistant
+ExecStart=/opt/rb-assistant/venv/bin/python3 /opt/rb-assistant/server.py --port 9001
 Restart=on-failure
 
 [Install]
