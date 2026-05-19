@@ -1,0 +1,12 @@
+[Unit]
+Description=RB Assistant local semantic search service
+After=network.target
+
+[Service]
+Type=simple
+User=rbassistant
+ExecStart=/usr/bin/python3 /opt/rb-assistant/server.py --port 9001
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

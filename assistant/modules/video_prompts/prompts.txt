@@ -1,0 +1,7 @@
+# Video production prompt examples
+
+Short promo:
+"Write a 30-second video script introducing {product} aimed at {audience}."
+
+Storyboard bullet points:
+"Create a 5-scene storyboard outline for a tutorial video about {topic}."

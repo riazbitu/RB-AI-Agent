@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RB Assistant</title>
+  <style>body{font-family:Arial;margin:20px}input,button{padding:8px}#results{margin-top:16px}</style>
+</head>
+<body>
+  <h1>RB Assistant</h1>
+  <input id="q" placeholder="Search query" style="width:60%">
+  <button id="btn">Search (semantic)</button>
+  <button id="btnk">Search (keyword)</button>
+  <div id="results"></div>
+  <script>
+    const q = (s)=>encodeURIComponent(s.trim());
+    document.getElementById('btn').onclick = async ()=>{
+      const v=document.getElementById('q').value; if(!v) return;
+      const res = await fetch('/semantic?q='+q(v)); const j=await res.json(); render(j.results);
+    };
+    document.getElementById('btnk').onclick = async ()=>{
+      const v=document.getElementById('q').value; if(!v) return;
+      const res = await fetch('/search?q='+q(v)); const j=await res.json(); render(j.results);
+    };
+    function render(list){
+      const out=document.getElementById('results'); out.innerHTML='';
+      if(list.length===0){ out.innerText='No results'; return; }
+      list.forEach(it=>{
+        const d=document.createElement('div'); d.style.marginBottom='12px';
+        d.innerHTML=`<b>${it.path}</b> (score=${(it.score||0).toFixed(4)})<div>${it.snippet}</div>`;
+        out.appendChild(d);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Language training prompt templates
+
+Conversation practice:
+"""
+You are a language tutor. Help the student practice conversation about {topic}.
+"""
+
+Grammar correction:
+"""
+Correct the following text and explain mistakes: {text}
+"""

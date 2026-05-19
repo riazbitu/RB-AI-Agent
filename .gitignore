@@ -1,0 +1,7 @@
+# Build artifacts
+assistant/package/
+*.deb
+
+# Python caches
+assistant/__pycache__/
+assistant/tests/__pycache__/

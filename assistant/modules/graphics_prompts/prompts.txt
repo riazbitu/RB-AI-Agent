@@ -1,0 +1,7 @@
+# Graphics prompt examples
+
+Logo design:
+"Create a minimal flat logo for a technology startup named {name} in blue and orange." 
+
+Illustration concept:
+"Generate a prompt for a vector illustration about {theme} with a modern flat color style." 
